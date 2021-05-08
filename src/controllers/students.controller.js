@@ -11,7 +11,7 @@ const create = (req, res) => {
   });
 };
 
-const list = (rew, res) => {
+const list = (req, res) => {
   Student.find((err, data) => {
     if (err) {
         return res.status(400).json(err.message);
@@ -20,7 +20,7 @@ const list = (rew, res) => {
   });
 };
 
-const read = (rew, res) => {
+const read = (req, res) => {
   const id = req.params.id;
   Student.findById(id).exec((err, data) => {
     if (err) {
@@ -61,6 +61,5 @@ const update = (req, res) => {
     });
   };
   
-
   
 export default { create,list,read,update,remove }

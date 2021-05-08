@@ -1,4 +1,4 @@
-import student from "./student.router.js";
+import student from "./student.router";
 import course from "./course.router";
 
 export default app => {

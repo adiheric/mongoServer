@@ -12,7 +12,7 @@ const create = (req, res) => {
 };
 
 const read = (req, res) => {
-  const id = req.params._id;
+  const id = req.params.id;
   Course.findById(id).exec((err, data) => {
     if (err) {
       return res.status(400).json(err.message);
@@ -22,7 +22,7 @@ const read = (req, res) => {
 };
 
 const update = (req, res) => {
-  const id = req.params._id;
+  const id = req.params.id;
   Course.findById(id).exec((err, data) => {
     if (err || !data) {
       return res.status(400).json("Course is not found!");
